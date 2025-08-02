@@ -11,7 +11,9 @@ const Header = () => {
       <header className="flex items-center justify-between pr-5 pl-5 pt-3 pb-3 relative shadow-lg min-w-80">
         <figure
           className="flex items-center transition transform ease-in active:scale-105 z-20"
-          onClick={changeShow}
+          onClick={() => {
+            setShow(false);
+          }}
         >
           <svg
             className="size-10 fill-rose-600"
