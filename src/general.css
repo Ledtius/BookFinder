@@ -13,9 +13,9 @@
 }
 
 .footer-btn {
-  @apply bg-rose-600 p-2 rounded-lg hover:bg-gray-200;
+  @apply bg-rose-600 p-2 rounded-lg  transition-opacity ease-in hover:opacity-50;
 }
 
 .footer-btn-icon {
-  @apply size-8 fill-white group-first:hover:fill-rose-500;
+  @apply size-8 fill-white;
 }
