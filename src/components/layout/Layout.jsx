@@ -6,8 +6,11 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main>
-        <Outlet />
+
+      <main className="flex justify-center">
+        <div className="max-w-[1440px] w-full pr-10 pl-10">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </>
