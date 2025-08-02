@@ -11,3 +11,11 @@
 .menu-btn-icon {
   @apply size-9 fill-gray-700;
 }
+
+.footer-btn {
+  @apply bg-rose-600 p-2 rounded-lg hover:bg-gray-200;
+}
+
+.footer-btn-icon {
+  @apply size-8 fill-white group-first:hover:fill-rose-500;
+}
