@@ -71,6 +71,24 @@ const Footer = () => {
               </a>
             </section>
           </nav>
+          <hr />
+          <small className="text-center mt-4 p-4 text-neutral-500">
+            © 2025 -{" "}
+            <a
+              className="hover-nav-link"
+              href="https://www.linkedin.com/in/caletdevia/"
+            >
+              Calet Devia
+            </a>{" "}
+            · Inspirado en diseño de{" "}
+            <a
+              className="hover-nav-link"
+              href="https://themefisher.com/demo?theme=godocs-bulma"
+            >
+              Themefisher
+            </a>{" "}
+            · Algunos derechos reservados
+          </small>
         </div>
       </footer>
     </>
