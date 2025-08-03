@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <>
-      <footer className="min-w-80 flex justify-center">
+      <footer className="min-w-80 flex justify-center mt-30">
         <div className="flex flex-col items-center max-w-[1440px]">
           <figure className="flex items-center transition transform ease-in scale-120 ">
             <Link to="/" className="flex items-center">

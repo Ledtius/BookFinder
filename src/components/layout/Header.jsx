@@ -8,7 +8,7 @@ const Header = () => {
   }
   return (
     <>
-      <header className="flex items-center justify-center pr-5 pl-5 pt-3 pb-3  shadow-lg min-w-80">
+      <header className="flex items-center justify-center pr-5 pl-5 pt-3 pb-3  shadow-lg min-w-8 fixed w-full z-20 bg-white">
         <div className="flex items-center  w-full justify-between max-w-[1440px] relative">
           <figure
             className="flex items-center transition transform ease-in active:scale-105 z-20 cursor-pointer"
