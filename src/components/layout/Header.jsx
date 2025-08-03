@@ -80,7 +80,7 @@ const Header = () => {
                 </li>
                 <li className="hover-nav-link">
                   <Link to={"about-us"} onClick={changeShow}>
-                    Acerca de nosotros
+                    Sobre nosotros
                   </Link>
                 </li>
               </ul>

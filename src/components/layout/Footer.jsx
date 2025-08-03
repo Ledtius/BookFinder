@@ -26,7 +26,7 @@ const Footer = () => {
                 <Link to={"favorites"}>Favoritos</Link>
               </li>
               <li className="hover-nav-link">
-                <Link to={"about-us"}>Acerca de nosotros</Link>
+                <Link to={"about-us"}>Sobre nosotros</Link>
               </li>
             </ul>
             <section className="flex items-center gap-7">
