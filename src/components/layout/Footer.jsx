@@ -17,7 +17,7 @@ const Footer = () => {
               <h2 className="font-bold">BookFinder</h2>
             </Link>
           </figure>
-          <nav className="flex flex-col justify-center items-center gap-8   p-5  w-full bg-white">
+          <nav className="flex flex-col justify-center items-center gap-8   p-5  w-full ">
             <ul className="flex items-center flex-col gap-4 text-lg">
               <li className="hover-nav-link">
                 <Link to={"/"}>Inicio</Link>
