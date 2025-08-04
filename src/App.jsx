@@ -2,6 +2,7 @@ import Layout from "./components/layout/Layout";
 import Home from "./components/pages/Home.jsx";
 import Favorites from "./components/pages/Favorites.jsx";
 import AboutUs from "./components/pages/AboutUs.jsx";
+import BookInfo from "./components/books/BookInfo.jsx";
 
 import { BrowserRouter, Route, Routes } from "react-router";
 
@@ -14,6 +15,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="favorites" element={<Favorites />} />
             <Route path="about-us" element={<AboutUs />} />
+            <Route path="book-info" element={<BookInfo />} />
           </Route>
         </Routes>
       </BrowserRouter>

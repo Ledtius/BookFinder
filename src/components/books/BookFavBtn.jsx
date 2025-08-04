@@ -1,7 +1,7 @@
 const BookFavBtn = () => {
   return (
     <>
-      <button className="flex items-center gap-1 p-2 bg-white border-2 rounded-lg border-gray-200 w-full cursor-pointer transition-all hover:border-yellow-400">
+      <button className="flex items-center justify-center gap-1 p-2 bg-white border-2 rounded-lg border-gray-200 w-full cursor-pointer transition-all hover:border-yellow-400">
         <svg
           className="size-6 fill-yellow-400"
           xmlns="http://www.w3.org/2000/svg"

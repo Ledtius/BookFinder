@@ -1,6 +1,7 @@
 import Hero from "../common/Hero.jsx";
 import Form from "../common/Form.jsx";
 import BookList from "../books/BookList.jsx";
+import { Link } from "react-router";
 const Home = () => {
   return (
     <>
@@ -8,6 +9,9 @@ const Home = () => {
         <Hero />
         <Form />
         <BookList />
+        <Link to="book-info">
+          <button>ssss</button>
+        </Link>
       </section>
     </>
   );
