@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <header className="flex items-center justify-center pr-5 pl-5 pt-3 pb-3  shadow-lg min-w-8 fixed w-full z-20 bg-white">
-        <div className="flex items-center  w-full justify-between max-w-[1440px] relative">
+        <div className="flex items-center  w-full justify-between max-w-[1024px] relative">
           <figure
             className="flex items-center transition transform ease-in active:scale-105 z-20 cursor-pointer"
             onClick={() => {
@@ -28,7 +28,7 @@ const Header = () => {
             </Link>
           </figure>
           <button
-            className={`menu-btn transition-all duration-300 ease-in-out ${
+            className={`menu-btn transition-all duration-300 ease-in-out lg:hidden lg:pointer-events-none ${
               show
                 ? "scale-0 opacity-0 translate-y-2 pointer-events-none"
                 : "scale-100 opacity-100 translate-y-0"
@@ -44,7 +44,7 @@ const Header = () => {
             </svg>
           </button>
           <button
-            className={`menu-btn z-20  transition-all ease-out absolute right-0 ${
+            className={`menu-btn z-20  transition-all ease-out absolute right-0 lg:hidden lg:pointer-events-none ${
               show
                 ? "scale-100 opacity-100"
                 : "scale-0 opacity-0 pointer-events-none"
@@ -60,14 +60,14 @@ const Header = () => {
             </svg>
           </button>
           <div
-            className={`absolute w-full inset-4 z-10 p-10 transition-all duration-300 ease-in ${
+            className={`absolute w-full inset-4 z-10 p-10 transition-all duration-300 ease-in lg:static lg:w-fit lg:p-0 l lg:flex lg:h-fit lg:items-center lg:justify-center ${
               show
-                ? "opacity-100 translate-y-2"
-                : "opacity-0 translate-y-0 pointer-events-none"
+                ? "opacity-100 translate-y-2 lg:opacity-100 lg:translate-y-0"
+                : "opacity-0 translate-y-0 pointer-events-none lg:opacity-100 lg:translate-y-0 lg:pointer-events-auto"
             }`}
           >
-            <nav className="flex justify-center border-1 border-gray-400 p-5 shadow-lg w-full bg-white">
-              <ul className="flex items-center flex-col gap-4 text-lg">
+            <nav className="flex justify-center border-1 border-gray-400 p-5 shadow-lg w-full bg-white lg:border-0 lg:border-none lg:p-0 lg:bg-none lg:shadow-none lg:items-center">
+              <ul className="flex items-center flex-col gap-4 text-lg lg:flex-row lg:w-fit lg:gap-12 lg:text-sm">
                 <li className="hover-nav-link">
                   <Link to={"/"} onClick={changeShow}>
                     Inicio

@@ -3,9 +3,9 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <>
-      <footer className="min-w-80 flex justify-center mt-30">
-        <div className="flex flex-col items-center max-w-[1440px]">
-          <figure className="flex items-center transition transform ease-in scale-120 ">
+      <footer className="min-w-80 flex justify-center mt-30 flex-col items-center ">
+        <div className="flex flex-col items-center md:flex-row md:gap-4 lg:gap-10">
+          <figure className="flex items-center transition transform ease-in scale-120">
             <Link to="/" className="flex items-center">
               <svg
                 className="size-10 fill-rose-600"
@@ -17,8 +17,8 @@ const Footer = () => {
               <h2 className="font-bold">BookFinder</h2>
             </Link>
           </figure>
-          <nav className="flex flex-col justify-center items-center gap-8   p-5  w-full ">
-            <ul className="flex items-center flex-col gap-4 text-lg">
+          <nav className="flex flex-col justify-center items-center gap-10   p-5  w-full md:flex-row ">
+            <ul className="flex items-center flex-col gap-4 text-lg lg:flex-row md:text-sm">
               <li className="hover-nav-link">
                 <Link to={"/"}>Inicio</Link>
               </li>
@@ -71,25 +71,27 @@ const Footer = () => {
               </a>
             </section>
           </nav>
-          <hr />
-          <small className="text-center mt-4 p-4 text-neutral-500">
-            © 2025 -{" "}
-            <a
-              className="hover-nav-link"
-              href="https://www.linkedin.com/in/caletdevia/"
-            >
-              Calet Devia
-            </a>{" "}
-            · Inspirado en diseño de{" "}
-            <a
-              className="hover-nav-link"
-              href="https://themefisher.com/demo?theme=godocs-bulma"
-            >
-              Themefisher
-            </a>{" "}
-            · Algunos derechos reservados
-          </small>
         </div>
+        <hr className="border-1 border-gray-300 w-full" />
+        <small className="text-center p-4 text-neutral-500">
+          © 2025 -{" "}
+          <a
+            className="hover-nav-link"
+            target="_blank"
+            href="https://www.linkedin.com/in/caletdevia/"
+          >
+            Calet Devia
+          </a>{" "}
+          · Inspirado en diseño de{" "}
+          <a
+            className="hover-nav-link"
+            target="_blank"
+            href="https://themefisher.com/demo?theme=godocs-bulma"
+          >
+            Themefisher
+          </a>{" "}
+          · Algunos derechos reservados
+        </small>
       </footer>
     </>
   );

@@ -3,13 +3,13 @@ import BookFavBtn from "./BookFavBtn.jsx";
 const BookInfo = () => {
   return (
     <>
-      <section className="mt-[107.2px] flex flex-col items-center gap-6">
+      <section className="mt-30 flex flex-col items-center gap-6 md:flex-row">
         <img
-          className="rounded-lg object-fill h-[279.625px]"
+          className="rounded-lg object-fill max-w-md h-[279.625px] md:self-start md:h-[474.4px]"
           src="http://books.google.com/books/content?id=FlDehedEjV4C&printsec=frontcover&img=1&zoom=1&source=gbs_api"
           alt="book-img"
         />
-        <div className="flex flex-col items-start gap-4">
+        <div className="flex flex-col items-start gap-4 max-w-sm md:max-w-md">
           <article className="flex flex-col gap-2">
             <h1 className="font-semibold text-2xl max-h-16 overflow-auto ">
               El viejo y el mar Lorem ipsum dolor sit amet consectetur
@@ -43,11 +43,13 @@ const BookInfo = () => {
               <span className="max-h-16 overflow-auto ">2001</span>
             </article>
           </div>
+          <div className="flex flex-col w-full gap-4">
+            <button className="flex items-center justify-center gap-1 p-2 bg-white border-2 rounded-lg border-rose-600 text-rose-600 font-bold w-full cursor-pointer transition-all hover:text-white hover:bg-rose-600">
+              Ver libro
+            </button>
+            <BookFavBtn />
+          </div>
         </div>
-        <button className="flex items-center justify-center gap-1 p-2 bg-white border-2 rounded-lg border-rose-600 text-rose-600 font-bold w-full cursor-pointer transition-all hover:text-white hover:bg-rose-600">
-          Ver libro
-        </button>
-        <BookFavBtn />
       </section>
     </>
   );

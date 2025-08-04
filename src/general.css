@@ -17,5 +17,5 @@
 }
 
 .footer-btn-icon {
-  @apply size-8 fill-white;
+  @apply size-8 fill-white md:size-4;
 }
