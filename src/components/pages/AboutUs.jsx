@@ -1,7 +1,7 @@
 const AboutUs = () => {
   return (
     <>
-      <section className="mt-[107.2px] flex flex-col w-full">
+      <section className="mt-[107.2px] flex flex-col items-center w-full">
         <figure className="flex items-center gap-2 ">
           <svg
             className="size-10"
