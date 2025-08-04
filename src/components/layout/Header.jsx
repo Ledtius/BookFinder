@@ -67,7 +67,7 @@ const Header = () => {
             }`}
           >
             <nav className="flex justify-center border-1 border-gray-400 p-5 shadow-lg w-full bg-white lg:border-0 lg:border-none lg:p-0 lg:bg-none lg:shadow-none lg:items-center">
-              <ul className="flex items-center flex-col gap-4 text-lg lg:flex-row lg:w-fit lg:gap-12 lg:text-sm">
+              <ul className="flex items-center flex-col gap-4 text-lg lg:flex-row lg:w-fit lg:gap-12 lg:text-">
                 <li className="hover-nav-link">
                   <Link to={"/"} onClick={changeShow}>
                     Inicio

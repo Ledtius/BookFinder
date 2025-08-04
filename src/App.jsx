@@ -6,19 +6,30 @@ import BookInfo from "./components/books/BookInfo.jsx";
 
 import { BrowserRouter, Route, Routes } from "react-router";
 
+import useBooks from "./hooks/useBooks.js";
+
+import { ContextBooks } from "./context/contextBooks.js";
+
+import googleBooks from "./services/googleBooks.js";
+
 function App() {
+  const { bookName, setBookName } = useBooks();
+
+  console.log(bookName);
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="favorites" element={<Favorites />} />
-            <Route path="about-us" element={<AboutUs />} />
-            <Route path="book-info" element={<BookInfo />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <ContextBooks.Provider value={{ bookName, setBookName }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="favorites" element={<Favorites />} />
+              <Route path="about-us" element={<AboutUs />} />
+              <Route path="book-info" element={<BookInfo />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ContextBooks.Provider>
     </>
   );
 }
