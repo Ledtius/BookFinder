@@ -10,50 +10,53 @@ const BookList = () => {
   return (
     <>
       <img
-        className="size-9/12 max-w-sm mt-20"
+        className={`size-9/12 max-w-sm mt-20 transition-all ease-in ${
+          books.length === 0
+            ? "opacity-100"
+            : " opacity-0 size-10 pointer-events-none"
+        }`}
         src="/src/assets/image/emptySearch.png"
         alt="no-search"
       />
+      <ul className="flex flex-col gap-6">
+        {books.map(({ volumeInfo, id }) => {
+          const {
+            title = "Sin titulo",
+            authors = ["Sin autor"],
+            description = "Sin descripción",
+            publisher = "Sin editorial",
+            publishedDate = "Sin fecha",
+            previewLink = "about:blank",
+            imageLinks,
+          } = volumeInfo;
 
-      {books.map(({ volumeInfo, id }) => {
-        const {
-          title = "Sin titulo",
-          authors = ["Sin autor"],
-          description = "Sin descripción",
-          publisher = "Sin editorial",
-          publishedDate = "Sin fecha",
-          previewLink = "about:blank",
-          imageLinks,
-        } = volumeInfo;
+          const {
+            thumbnail = "/src/assets/image/noBook.png",
+            smallThumbnail = "/src/assets/image/noBook.png",
+          } = imageLinks || {};
 
-        const {
-          thumbnail = "/src/assets/image/noBook.png",
-          smallThumbnail = "/src/assets/image/noBook.png",
-        } = imageLinks;
+          const bookInfo = {
+            id,
+            title,
+            authors,
+            description,
+            publisher,
+            publishedDate,
+            previewLink,
+            thumbnail,
+            smallThumbnail,
+          };
 
-        const bookInfo = {
-          id,
-          title,
-          authors,
-          description,
-          publisher,
-          publishedDate,
-          previewLink,
-          thumbnail,
-          smallThumbnail,
-        };
-
-        return (
-          <ul>
+          return (
             <li
               key={id}
               className="bg-white w-fit list-none flex flex-col gap-2 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] transition-transform cursor-pointer ease-in-out hover:scale-105"
             >
-              <BookItem bookInfo={bookInfo} />;
+              <BookItem bookInfo={bookInfo} />
             </li>
-          </ul>
-        );
-      })}
+          );
+        })}
+      </ul>
     </>
   );
 };

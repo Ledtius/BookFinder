@@ -15,18 +15,17 @@ const BookItem = ({ bookInfo = {} }) => {
 
   return (
     <>
-
-        <img
-          className="rounded-lg object-fill w-full h-[279.625px]"
-          src={thumbnail}
-          alt="book-no-found"
-        />
-        <article className="flex flex-col gap-2">
-          <h3 className="font-semibold text-2xl max-h-16 overflow-auto">
-            {title}
-          </h3>
-          <h4 className="max-h-16 overflow-auto">{authors}</h4>
-        </article>
+      <img
+        className="rounded-lg object-fill w-full h-[279.625px]"
+        src={thumbnail}
+        alt="book-no-found"
+      />
+      <article className="flex flex-col gap-2">
+        <h3 className="font-semibold text-2xl max-h-16 overflow-auto">
+          {title}
+        </h3>
+        <h4 className="max-h-16 overflow-auto">{authors}</h4>
+      </article>
 
       {/* <li className="bg-white w-fit list-none flex flex-col gap-2 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] transition-transform cursor-pointer ease-in-out hover:scale-105">
         <img
