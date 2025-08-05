@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import BookFavBtn from "./BookFavBtn.jsx";
 
 const BookItem = ({ bookInfo = {} }) => {
@@ -15,18 +16,21 @@ const BookItem = ({ bookInfo = {} }) => {
 
   return (
     <>
-      <img
-        className="rounded-lg object-fill w-[180.78] h-[279.625px]"
-        src={thumbnail}
-        alt="book-no-found"
-      />
-      <article className="flex flex-col gap-2 min-h-[95.98px]">
-        <h3 className="font-semibold text-2xl  max-h-16 overflow-auto min-h-8">
-          {title}
-        </h3>
-        <h4 className="max-h-16 overflow-auto">{authors}</h4>
-      </article>
-      <BookFavBtn />
+      <Link to="book-info" className="flex flex-col gap-4">
+        <img
+          className="rounded-lg object-fill w-[180.78] h-[279.625px]"
+          src={thumbnail}
+          alt="book-no-found"
+        />
+        <article className="flex flex-col gap-2 min-h-[95.98px]">
+          <h3 className="font-semibold text-2xl  max-h-16 overflow-auto min-h-8">
+            {title}
+          </h3>
+          <h4 className="max-h-9 overflow-auto ">{authors}</h4>
+        </article>
+      </Link>
+
+      <BookFavBtn bookInfo={bookInfo} />
       {/* <li className="bg-white w-fit list-none flex flex-col gap-2 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] transition-transform cursor-pointer ease-in-out hover:scale-105">
         <img
           className="rounded-lg object-fill w-full h-[279.625px]"

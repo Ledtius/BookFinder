@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { ContextBooks } from "../../context/contextBooks.js";
 
 import BookItem from "./BookItem.jsx";
@@ -50,7 +51,7 @@ const BookList = () => {
           return (
             <li
               key={id}
-              className="bg-white w-fit list-none flex flex-col gap-4 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] h-[466.825px] transition-transform cursor-pointer ease-in-out hover:scale-105"
+              className="bg-white w-fit list-none flex flex-col gap-4 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] h-[520.825px] transition-transform cursor-pointer ase-in-out hover:scale-105 justify-between"
             >
               {/* 466.825px  498.825px*/}
               <BookItem bookInfo={bookInfo} />
