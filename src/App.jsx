@@ -13,12 +13,11 @@ import { ContextBooks } from "./context/contextBooks.js";
 import googleBooks from "./services/googleBooks.js";
 
 function App() {
-  const { bookName, setBookName } = useBooks();
+  const { bookName, setBookName, books, setBooks } = useBooks();
 
-  console.log(bookName);
   return (
     <>
-      <ContextBooks.Provider value={{ bookName, setBookName }}>
+      <ContextBooks.Provider value={{ bookName, setBookName, books, setBooks }}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
