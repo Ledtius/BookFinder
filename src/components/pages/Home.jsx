@@ -9,9 +9,6 @@ const Home = () => {
         <Hero />
         <Form />
         <BookList />
-        <Link to="book-info">
-          <button>ssss</button>
-        </Link>
       </section>
     </>
   );
