@@ -10,14 +10,25 @@ import useBooks from "./hooks/useBooks.js";
 
 import { ContextBooks } from "./context/contextBooks.js";
 
-import googleBooks from "./services/googleBooks.js";
+import useStorage from "./hooks/useStorage.js";
 
 function App() {
   const { bookName, setBookName, books, setBooks } = useBooks();
 
+  const { favBooks, setFavBooks } = useStorage();
+
   return (
     <>
-      <ContextBooks.Provider value={{ bookName, setBookName, books, setBooks }}>
+      <ContextBooks.Provider
+        value={{
+          bookName,
+          setBookName,
+          books,
+          setBooks,
+          favBooks,
+          setFavBooks,
+        }}
+      >
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
