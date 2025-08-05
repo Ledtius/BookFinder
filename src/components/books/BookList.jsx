@@ -18,7 +18,7 @@ const BookList = () => {
         src="/src/assets/image/emptySearch.png"
         alt="no-search"
       />
-      <ul className="flex flex-col justify-center gap-6 md:flex-row md:flex-wrap">
+      <ul className="flex flex-col justify-center gap-6 md:flex-row md:flex-wrap max-w-5xl">
         {books.map(({ volumeInfo, id }) => {
           const {
             title = "Sin titulo",
