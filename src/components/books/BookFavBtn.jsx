@@ -1,7 +1,19 @@
-const BookFavBtn = () => {
+import { ContextBooks } from "../../context/contextBooks.js";
+
+import { useContext, useState } from "react";
+
+const BookFavBtn = ({ bookInfo }) => {
+  const { favBooks, setFavBooks } = useContext(ContextBooks);
   return (
     <>
-      <button className="flex items-center justify-center gap-1 p-2 bg-white border-2 rounded-lg border-gray-200 w-full cursor-pointer transition-all hover:border-yellow-400">
+      <button
+        onClick={() => {
+          localStorage.setItem("favBooks", JSON.stringify([bookInfo]));
+
+          setFavBooks((prev) => [...prev, bookInfo]);
+        }}
+        className="flex items-center justify-center gap-1 p-2 bg-white border-2 rounded-lg border-gray-200 w-full cursor-pointer transition-all hover:border-yellow-400"
+      >
         <svg
           className="size-6 fill-yellow-400"
           xmlns="http://www.w3.org/2000/svg"
