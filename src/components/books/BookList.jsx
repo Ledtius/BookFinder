@@ -18,7 +18,7 @@ const BookList = () => {
         src="/src/assets/image/emptySearch.png"
         alt="no-search"
       />
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col justify-center gap-6 md:flex-row md:flex-wrap">
         {books.map(({ volumeInfo, id }) => {
           const {
             title = "Sin titulo",
@@ -50,8 +50,9 @@ const BookList = () => {
           return (
             <li
               key={id}
-              className="bg-white w-fit list-none flex flex-col gap-2 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] transition-transform cursor-pointer ease-in-out hover:scale-105"
+              className="bg-white w-fit list-none flex flex-col gap-4 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] h-[466.825px] transition-transform cursor-pointer ease-in-out hover:scale-105"
             >
+              {/* 466.825px  498.825px*/}
               <BookItem bookInfo={bookInfo} />
             </li>
           );
