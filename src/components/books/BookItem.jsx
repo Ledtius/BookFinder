@@ -18,12 +18,12 @@ const BookItem = ({ bookInfo = {} }) => {
     <>
       <Link to="book-info" className="flex flex-col gap-4">
         <img
-          className="rounded-lg object-fill w-[180.78] h-[279.625px]"
+          className="rounded-lg object-fill w-[180.78px] h-[279.625px] "
           src={thumbnail}
-          alt="book-no-found"
+          alt="book-image"
         />
         <article className="flex flex-col gap-2 min-h-[95.98px]">
-          <h3 className="font-semibold text-2xl  max-h-16 overflow-auto min-h-8">
+          <h3 className="font-semibold text-2xl  max-h-16 overflow-auto min-h-8 w-[180px]">
             {title}
           </h3>
           <h4 className="max-h-9 overflow-auto ">{authors}</h4>
