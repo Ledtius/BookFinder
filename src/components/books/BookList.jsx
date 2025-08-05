@@ -3,7 +3,7 @@ import { ContextBooks } from "../../context/contextBooks.js";
 
 import BookItem from "./BookItem.jsx";
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const BookList = () => {
   const { books } = useContext(ContextBooks);
@@ -19,7 +19,7 @@ const BookList = () => {
         src="/src/assets/image/emptySearch.png"
         alt="no-search"
       />
-      <ul className="flex flex-col justify-center gap-6 md:flex-row md:flex-wrap max-w-5xl">
+      <ul className="book-list-ul">
         {books.map(({ volumeInfo, id }) => {
           const {
             title = "Sin titulo",
@@ -49,11 +49,7 @@ const BookList = () => {
           };
 
           return (
-            <li
-              key={id}
-              className="bg-white w-fit list-none flex flex-col gap-4 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] h-[520.825px] transition-transform cursor-pointer ase-in-out hover:scale-105 justify-between"
-            >
-              {/* 466.825px  498.825px*/}
+            <li key={id} className="book-list-li">
               <BookItem bookInfo={bookInfo} />
             </li>
           );

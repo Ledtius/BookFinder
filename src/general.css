@@ -19,3 +19,11 @@
 .footer-btn-icon {
   @apply size-8 fill-white md:size-4;
 }
+
+.book-list-ul {
+  @apply flex flex-col justify-center gap-6 md:flex-row md:flex-wrap max-w-5xl;
+}
+
+.book-list-li {
+  @apply bg-white w-fit list-none flex flex-col gap-4 items-center p-6 rounded-lg shadow-lg max-w-[228.775px] h-[520.825px] transition-transform cursor-pointer ease-in-out hover:scale-105 justify-between;
+}
