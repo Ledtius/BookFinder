@@ -2,10 +2,28 @@ import { ContextBooks } from "../../context/contextBooks.js";
 
 import { useContext, useState } from "react";
 
-const BookFavBtn = ({ bookInfo }) => {
-  const { favBooks, setFavBooks } = useContext(ContextBooks);
+const BookFavBtn = ({ bookInfo = {} }) => {
+  const { favBooks, setFavBooks, books } = useContext(ContextBooks);
 
-  const [favState, setFavState] = useState(false);
+  const [favState, setFavState] = useState(() => {
+    const booksLocalStorage =
+      JSON.parse(localStorage.getItem("favBooks")) || [];
+
+    // console.log(booksLocalStorage);
+
+    if (booksLocalStorage.length > 0) {
+      const localStorageBookItem = booksLocalStorage.find(({ id, state }) => {
+        // console.log(id, bookInfo.id, state);
+        return id === bookInfo.id;
+      });
+      // console.log(localStorageBookItem);
+
+      /*  If exist in the LS compere to the books searched, the favState is true */
+      if (localStorageBookItem) return true;
+    }
+    /*  If doesn't exist in the LS the favState is false */
+    return false;
+  });
 
   return (
     <>
@@ -15,7 +33,6 @@ const BookFavBtn = ({ bookInfo }) => {
             const localStorageBooks = JSON.parse(
               localStorage.getItem("favBooks")
             );
-
             const outBookFavorite = localStorageBooks.filter(
               ({ id }) => id !== bookInfo.id
             );
@@ -24,13 +41,14 @@ const BookFavBtn = ({ bookInfo }) => {
 
             setFavBooks(outBookFavorite);
           } else {
-            localStorage.setItem("favBooks", JSON.stringify([bookInfo]));
+            localStorage.setItem(
+              "favBooks",
+              JSON.stringify([...favBooks, { ...bookInfo, state: !favState }])
+            );
 
-            setFavBooks((prev) => [...prev, bookInfo]);
-
+            setFavBooks((prev) => [...prev, { ...bookInfo, state: !favState }]);
             console.log(bookInfo.id);
           }
-
           setFavState(!favState);
         }}
         className={`flex items-center justify-center gap-1 p-2  border-2 rounded-lg w-full cursor-pointer transition-all ${
