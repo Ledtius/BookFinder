@@ -21,7 +21,8 @@ async function googleBooks(book, setBooks, stateRequest, setStateRequest) {
 
     if (!books) {
       setBooks([]);
-      return;
+      setStateRequest(false);
+      throw new Error("undefined value in books");
     }
 
     setBooks(books);
@@ -29,7 +30,7 @@ async function googleBooks(book, setBooks, stateRequest, setStateRequest) {
       setStateRequest(() => false);
     }, 1000);
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 }
 
