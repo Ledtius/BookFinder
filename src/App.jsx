@@ -20,6 +20,8 @@ function App() {
     setBooks,
     globalBookInfo,
     setGlobalBookInfo,
+    stateRequest,
+    setStateRequest,
   } = useBooks();
 
   const { favBooks, setFavBooks } = useStorage();
@@ -36,6 +38,8 @@ function App() {
           setFavBooks,
           globalBookInfo,
           setGlobalBookInfo,
+          stateRequest,
+          setStateRequest,
         }}
       >
         <BrowserRouter>

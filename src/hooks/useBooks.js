@@ -5,10 +5,19 @@ function useBooks() {
   const [bookName, setBookName] = useState("");
   const [books, setBooks] = useState([]);
   const [globalBookInfo, setGlobalBookInfo] = useState({});
+  const [stateRequest, setStateRequest] = useState(false);
 
   useEffect(() => {
-    if (bookName) googleBooks(bookName, setBooks);
+    if (bookName)
+      googleBooks(bookName, setBooks, stateRequest, setStateRequest);
   }, [bookName]);
+
+  useEffect(() => {
+    console.log(stateRequest);
+  }, [stateRequest]);
+  useEffect(() => {
+    console.log(books);
+  }, [books]);
 
   return {
     bookName,
@@ -17,6 +26,8 @@ function useBooks() {
     setBooks,
     globalBookInfo,
     setGlobalBookInfo,
+    stateRequest,
+    setStateRequest,
   };
 }
 

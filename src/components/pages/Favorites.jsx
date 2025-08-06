@@ -15,12 +15,11 @@ const Favorites = () => {
         </figure>
 
         <img
-          className="size-9/12 max-w-sm mt-20 hidden"
+          className="size-9/12 max-w-sm mt-20 "
           src="/src/assets/image/emptySearch.png"
           alt="no-search"
         />
       </section>
-      <BookItem />
     </>
   );
 };
