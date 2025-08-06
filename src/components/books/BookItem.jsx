@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 import BookFavBtn from "./BookFavBtn.jsx";
+import { ContextBooks } from "../../context/contextBooks.js";
+import { useContext } from "react";
 
 const BookItem = ({ bookInfo = {} }) => {
+  const { setGlobalBookInfo } = useContext(ContextBooks);
   const {
     id,
     title,
@@ -16,7 +19,13 @@ const BookItem = ({ bookInfo = {} }) => {
 
   return (
     <>
-      <Link to="book-info" className="flex flex-col gap-4">
+      <Link
+        to="book-info"
+        className="flex flex-col gap-4"
+        onClick={() => {
+          setGlobalBookInfo(bookInfo);
+        }}
+      >
         <img
           className="rounded-lg object-fill w-[180.78px] h-[279.625px] "
           src={thumbnail}
