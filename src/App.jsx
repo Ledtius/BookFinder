@@ -13,7 +13,14 @@ import { ContextBooks } from "./context/contextBooks.js";
 import useStorage from "./hooks/useStorage.js";
 
 function App() {
-  const { bookName, setBookName, books, setBooks } = useBooks();
+  const {
+    bookName,
+    setBookName,
+    books,
+    setBooks,
+    globalBookInfo,
+    setGlobalBookInfo,
+  } = useBooks();
 
   const { favBooks, setFavBooks } = useStorage();
 
@@ -27,6 +34,8 @@ function App() {
           setBooks,
           favBooks,
           setFavBooks,
+          globalBookInfo,
+          setGlobalBookInfo,
         }}
       >
         <BrowserRouter>
