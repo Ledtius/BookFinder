@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .hover-nav-link {
-  @apply transition-colors ease-in hover:text-rose-600 cursor-pointer;
+  @apply transition-colors ease-in text-base hover:text-rose-600 cursor-pointer;
 }
 
 .menu-btn {
