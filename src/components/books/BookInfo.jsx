@@ -19,13 +19,13 @@ const BookInfo = () => {
 
   return (
     <>
-      <section className="mt-30 flex flex-col items-center gap-6 md:flex-row">
+      <section className="mt-30 flex flex-col items-center gap-6 md:flex-row lg:w-[800px] lg:h-[470.388px]">
         <img
           className="rounded-lg object-fill max-w-md h-[279.625px] md:self-start md:h-[474.4px]"
           src={thumbnail}
           alt="book-img"
         />
-        <div className="flex flex-col items-start gap-4 max-w-sm md:max-w-md">
+        <div className="flex flex-col items-start gap-4 max-w-sm md:max-w-md lg:w-[800px] lg:h-[470.388px] justify-between ">
           <article className="flex flex-col gap-2">
             <h1 className="font-semibold text-2xl max-h-16 overflow-auto">
               {title}
