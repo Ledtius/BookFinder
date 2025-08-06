@@ -46,7 +46,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+
               <Route path="favorites" element={<Favorites />} />
+
+              <Route path="favorites/book-info" element={<BookInfo />} />
               <Route path="about-us" element={<AboutUs />} />
               <Route path="book-info" element={<BookInfo />} />
             </Route>

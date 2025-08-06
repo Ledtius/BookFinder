@@ -5,12 +5,13 @@ import BookItem from "./BookItem";
 useContext;
 
 const BookFavList = () => {
-  const { favBook } = useContext(ContextBooks);
+  const { favBooks = [] } = useContext(ContextBooks);
 
+  console.log(favBooks);
   return (
     <>
       <ul className="book-list-ul">
-        {favBook.map(
+        {favBooks.map(
           ({
             id,
             title,
@@ -22,9 +23,20 @@ const BookFavList = () => {
             thumbnail,
             smallThumbnail,
           }) => {
+            const bookInfo = {
+              id,
+              title,
+              authors,
+              description,
+              publisher,
+              publishedDate,
+              previewLink,
+              thumbnail,
+              smallThumbnail,
+            };
             return (
               <li className="book-list-li" key={id}>
-                <BookItem />
+                <BookItem bookInfo={bookInfo} />
               </li>
             );
           }

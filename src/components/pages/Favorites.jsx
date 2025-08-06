@@ -1,9 +1,10 @@
 import BookItem from "../books/BookItem.jsx";
+import BookFavList from "../books/BookFavList.jsx";
 const Favorites = () => {
   return (
     <>
       <section className="mt-30 flex flex-col items-center w-full ">
-        <figure className="flex items-center justify-center gap-2 ">
+        <figure className="flex items-center justify-center gap-2  mb-20">
           <svg
             className="size-10 fill-yellow-400"
             xmlns="http://www.w3.org/2000/svg"
@@ -13,12 +14,7 @@ const Favorites = () => {
           </svg>
           <h1 className="font-bold text-2xl md:text-3xl">Favoritos</h1>
         </figure>
-
-        <img
-          className="size-9/12 max-w-sm mt-20 "
-          src="/src/assets/image/emptySearch.png"
-          alt="no-search"
-        />
+        <BookFavList />
       </section>
     </>
   );
