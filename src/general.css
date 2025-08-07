@@ -37,7 +37,7 @@
 }
 
 .li-darkmode {
-  @apply flex items-center gap-2 w-full max-w-35 transition-colors ease-in cursor-pointer dark:text-gray-100 hover:opacity-80 text-sm;
+  @apply flex items-center p-2 gap-2 w-full max-w-35 transition-colors ease-in cursor-pointer dark:text-gray-100 hover:opacity-80 text-sm;
 }
 
 .svg-darkmode {

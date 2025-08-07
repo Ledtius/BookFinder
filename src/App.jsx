@@ -24,7 +24,7 @@ function App() {
     setStateRequest,
   } = useBooks();
 
-  const { favBooks, setFavBooks } = useStorage();
+  const { favBooks, setFavBooks, mode, setMode } = useStorage();
 
   return (
     <>
@@ -40,6 +40,8 @@ function App() {
           setGlobalBookInfo,
           stateRequest,
           setStateRequest,
+          mode,
+          setMode,
         }}
       >
         <BrowserRouter>
