@@ -42,7 +42,7 @@
 }
 
 .svg-darkmode {
-  @apply fill-neutral-800 dark:fill-neutral-100;
+  @apply fill-gray-700 dark:fill-neutral-100;
 }
 
 /* Scrollbar para navegadores basados en Webkit */
