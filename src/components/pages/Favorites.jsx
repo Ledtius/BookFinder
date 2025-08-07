@@ -4,7 +4,7 @@ const Favorites = () => {
   return (
     <>
       <section className="mt-30 flex flex-col items-center w-full dark:text-neutral-100">
-        <figure className="flex items-center justify-center gap-2  mb-20">
+        <figure className="flex items-center justify-center gap-2 mb-20">
           <svg
             className="size-10 fill-yellow-400"
             xmlns="http://www.w3.org/2000/svg"

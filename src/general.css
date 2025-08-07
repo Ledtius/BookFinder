@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 .nav {
   @apply flex justify-center border-1 border-gray-400 p-5 shadow-lg w-full bg-white lg:border-0 lg:border-none lg:p-0 lg:bg-none lg:shadow-none lg:items-center dark:bg-neutral-900;
@@ -41,7 +42,7 @@
 }
 
 .svg-darkmode {
-  @apply fill-gray-700 dark:fill-neutral-100;
+  @apply fill-neutral-800 dark:fill-neutral-100;
 }
 
 /* Scrollbar para navegadores basados en Webkit */

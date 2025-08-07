@@ -30,7 +30,7 @@ const BookInfo = () => {
             <h1 className="font-semibold text-2xl max-h-16 overflow-auto dark:text-neutral-100">
               {title}
             </h1>
-            <span className="max-h-16 overflow-auto text-gray-300 ">
+            <span className="max-h-16 overflow-auto dark:text-gray-300 ">
               {authors}
             </span>
           </article>

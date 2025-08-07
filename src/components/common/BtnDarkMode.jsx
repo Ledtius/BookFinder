@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ContextBooks } from "../../context/contextBooks.js";
 
 const BtnDarkMode = () => {
   const { mode, setMode } = useContext(ContextBooks);
 
   const [showMenu, setShowMenu] = useState(false);
-  const [idValue, setIdValue] = useState("");
 
   function changeMode(e) {
     const value = e.target.id;
@@ -16,11 +15,26 @@ const BtnDarkMode = () => {
 
     localStorage.setItem("mode", JSON.stringify(value));
   }
+
+  useEffect(() => {
+    if (mode === "dark") {
+      document.documentElement.classList.add("dark");
+    } else if (mode === "light") {
+      document.documentElement.classList.remove("dark");
+    } else if (mode === "system") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  }, [mode]);
+
   const iconsBtn = () => {
     if (mode === "dark")
       return (
         <svg
-          className="svg-darkmode size-7"
+          className="svg-darkmode size-6 transition-all"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 640"
         >
@@ -40,21 +54,21 @@ const BtnDarkMode = () => {
     else
       return (
         <svg
-          className="svg-darkmode size-8"
+          className="svg-darkmode size-6"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 640"
         >
-          <path d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L350.2 48C365.4 48 378.5 58.7 381.5 73.5L396 143.5C410.1 149.5 423.3 157.2 435.3 166.3L503.1 143.8C517.5 139 533.3 145 540.9 158.2L570.8 210C578.4 223.2 575.7 239.8 564.3 249.9L511 297.3C511.9 304.7 512.3 312.3 512.3 320C512.3 327.7 511.8 335.3 511 342.7L564.4 390.2C575.8 400.3 578.4 417 570.9 430.1L541 481.9C533.4 495 517.6 501.1 503.2 496.3L435.4 473.8C423.3 482.9 410.1 490.5 396.1 496.6L381.7 566.5C378.6 581.4 365.5 592 350.4 592L290.6 592C275.4 592 262.3 581.3 259.3 566.5L244.9 496.6C230.8 490.6 217.7 482.9 205.6 473.8L137.5 496.3C123.1 501.1 107.3 495.1 99.7 481.9L69.8 430.1C62.2 416.9 64.9 400.3 76.3 390.2L129.7 342.7C128.8 335.3 128.4 327.7 128.4 320C128.4 312.3 128.9 304.7 129.7 297.3L76.3 249.8C64.9 239.7 62.3 223 69.8 209.9L99.7 158.1C107.3 144.9 123.1 138.9 137.5 143.7L205.3 166.2C217.4 157.1 230.6 149.5 244.6 143.4L259.1 73.5zM320.3 400C364.5 399.8 400.2 363.9 400 319.7C399.8 275.5 363.9 239.8 319.7 240C275.5 240.2 239.8 276.1 240 320.3C240.2 364.5 276.1 400.2 320.3 400z" />
+          <path d="M128 96C92.7 96 64 124.7 64 160L64 416C64 451.3 92.7 480 128 480L272 480L256 528L184 528C170.7 528 160 538.7 160 552C160 565.3 170.7 576 184 576L456 576C469.3 576 480 565.3 480 552C480 538.7 469.3 528 456 528L384 528L368 480L512 480C547.3 480 576 451.3 576 416L576 160C576 124.7 547.3 96 512 96L128 96zM160 160L480 160C497.7 160 512 174.3 512 192L512 352C512 369.7 497.7 384 480 384L160 384C142.3 384 128 369.7 128 352L128 192C128 174.3 142.3 160 160 160z" />
         </svg>
       );
   };
 
   return (
     <>
-      <div className="relative w-fit bg-red-500">
+      <div className="relative w-fit ml-4">
         <button
           onClick={() => setShowMenu(!showMenu)}
-          className="menu-btn transition-all duration-300 ease-in-out relative"
+          className="p-2 border-2 border-gray-400 rounded-lg bg-white cursor-pointer dark:bg-neutral-800 transition-all duration-300 ease-in-out relative flex items-center gap-2"
         >
           {iconsBtn()}
         </button>
@@ -70,7 +84,9 @@ const BtnDarkMode = () => {
               onClick={changeMode}
               id="dark"
               className={`li-darkmode transition-all ease-in-out  ${
-                mode === "dark" ? "bg-neutral-700" : "opacity-100"
+                mode === "dark"
+                  ? "bg-neutral-300 dark:bg-neutral-700"
+                  : "opacity-100"
               }`}
             >
               <svg
@@ -86,7 +102,9 @@ const BtnDarkMode = () => {
               onClick={changeMode}
               id="light"
               className={`li-darkmode transition-all ease-in-out  ${
-                mode === "light" ? "bg-neutral-700" : "opacity-100"
+                mode === "light"
+                  ? "bg-neutral-300 dark:bg-neutral-700"
+                  : "opacity-100"
               }`}
             >
               <svg
@@ -102,7 +120,9 @@ const BtnDarkMode = () => {
               onClick={changeMode}
               id="system"
               className={`li-darkmode transition-all ease-in-out  ${
-                mode === "system" ? "bg-neutral-700" : "opacity-100"
+                mode === "system"
+                  ? "bg-neutral-300 dark:bg-neutral-700"
+                  : "opacity-100"
               }`}
             >
               <svg
@@ -110,7 +130,7 @@ const BtnDarkMode = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 640 640"
               >
-                <path d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L350.2 48C365.4 48 378.5 58.7 381.5 73.5L396 143.5C410.1 149.5 423.3 157.2 435.3 166.3L503.1 143.8C517.5 139 533.3 145 540.9 158.2L570.8 210C578.4 223.2 575.7 239.8 564.3 249.9L511 297.3C511.9 304.7 512.3 312.3 512.3 320C512.3 327.7 511.8 335.3 511 342.7L564.4 390.2C575.8 400.3 578.4 417 570.9 430.1L541 481.9C533.4 495 517.6 501.1 503.2 496.3L435.4 473.8C423.3 482.9 410.1 490.5 396.1 496.6L381.7 566.5C378.6 581.4 365.5 592 350.4 592L290.6 592C275.4 592 262.3 581.3 259.3 566.5L244.9 496.6C230.8 490.6 217.7 482.9 205.6 473.8L137.5 496.3C123.1 501.1 107.3 495.1 99.7 481.9L69.8 430.1C62.2 416.9 64.9 400.3 76.3 390.2L129.7 342.7C128.8 335.3 128.4 327.7 128.4 320C128.4 312.3 128.9 304.7 129.7 297.3L76.3 249.8C64.9 239.7 62.3 223 69.8 209.9L99.7 158.1C107.3 144.9 123.1 138.9 137.5 143.7L205.3 166.2C217.4 157.1 230.6 149.5 244.6 143.4L259.1 73.5zM320.3 400C364.5 399.8 400.2 363.9 400 319.7C399.8 275.5 363.9 239.8 319.7 240C275.5 240.2 239.8 276.1 240 320.3C240.2 364.5 276.1 400.2 320.3 400z" />
+                <path d="M128 96C92.7 96 64 124.7 64 160L64 416C64 451.3 92.7 480 128 480L272 480L256 528L184 528C170.7 528 160 538.7 160 552C160 565.3 170.7 576 184 576L456 576C469.3 576 480 565.3 480 552C480 538.7 469.3 528 456 528L384 528L368 480L512 480C547.3 480 576 451.3 576 416L576 160C576 124.7 547.3 96 512 96L128 96zM160 160L480 160C497.7 160 512 174.3 512 192L512 352C512 369.7 497.7 384 480 384L160 384C142.3 384 128 369.7 128 352L128 192C128 174.3 142.3 160 160 160z" />
               </svg>
               Valor del sistema
             </li>

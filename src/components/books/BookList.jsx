@@ -111,7 +111,7 @@ const BookList = () => {
           };
 
           return (
-            <li key={id} className="book-list-li">
+            <li key={id} className="book-list-li min-h-screen bg-red-300">
               <BookItem bookInfo={bookInfo} />
             </li>
           );
