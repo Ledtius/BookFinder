@@ -76,7 +76,7 @@ const Footer = () => {
         <small className="text-center p-4 text-neutral-500 dark:text-gray-100 text-sm">
           © 2025 -{" "}
           <a
-            className="hover-nav-link text-lg"
+            className="transition-colors ease-in text-sm hover:text-rose-600 cursor-pointer dark:text-gray-100"
             target="_blank"
             href="https://www.linkedin.com/in/caletdevia/"
           >
@@ -84,7 +84,7 @@ const Footer = () => {
           </a>{" "}
           · Inspirado en diseño de{" "}
           <a
-            className="hover-nav-link"
+            className="transition-colors ease-in text-sm hover:text-rose-600 cursor-pointer dark:text-gray-100"
             target="_blank"
             href="https://themefisher.com/demo?theme=godocs-bulma"
           >

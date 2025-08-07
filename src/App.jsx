@@ -12,6 +12,8 @@ import { ContextBooks } from "./context/contextBooks.js";
 
 import useStorage from "./hooks/useStorage.js";
 
+import ScrollToTop from "./components/common/ScrollToTop.jsx";
+
 function App() {
   const {
     bookName,
@@ -45,6 +47,7 @@ function App() {
         }}
       >
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
