@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { ContextBooks } from "../../context/contextBooks.js";
 
 const BtnDarkMode = () => {
@@ -29,6 +29,21 @@ const BtnDarkMode = () => {
       }
     }
   }, [mode]);
+
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const iconsBtn = () => {
     if (mode === "dark")
@@ -73,6 +88,7 @@ const BtnDarkMode = () => {
           {iconsBtn()}
         </button>
         <nav
+          ref={menuRef}
           className={`flex justify-center border-1 border-gray-400 shadow-lg bg-white dark:bg-neutral-900 absolute right-0 transition-all ease-in-out z-10 ${
             showMenu
               ? "opacity-100 translate-y-1.5 pointer-events-auto"

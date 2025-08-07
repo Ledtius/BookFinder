@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import BtnDarkMode from "../common/BtnDarkMode.jsx";
 
 const Header = () => {
@@ -7,6 +7,22 @@ const Header = () => {
   function changeShow() {
     setShow(!show);
   }
+
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShow(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <header className="flex gap-4 items-center justify-center pr-5 pl-5 pt-3 pb-3  shadow-lg min-w-8 fixed w-full z-20 bg-white dark:bg-neutral-900 dark:text-neutral-100">
@@ -61,6 +77,7 @@ const Header = () => {
             </svg>
           </button>
           <div
+            ref={menuRef}
             className={`absolute w-full inset-4 z-10 p-10 transition-all duration-300 ease-in lg:static lg:w-fit lg:p-0 l lg:flex lg:h-fit lg:items-center lg:justify-center ${
               show
                 ? "opacity-100 translate-y-2 lg:opacity-100 lg:translate-y-0"
