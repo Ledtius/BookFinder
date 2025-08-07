@@ -20,8 +20,13 @@ const Form = () => {
             setInput(e.target.value);
           }}
           placeholder="Caperucita Roja..."
-          className=" shadow-md p-4 rounded-lg w-full ring-2 ring-gray-300  focus:outline focus:outline-rose-500 min-w-60 pr-26"
+          className=" shadow-md p-4 rounded-lg w-full ring-2 ring-gray-300  focus:outline focus:outline-rose-500 min-w-60 pr-26 dark:bg-zinc-900  dark:border-zinc-800 dark:ring-zinc-800 dark:text-zinc-200 dark:placeholder:text-zinc-500"
         />
+
+        {/* 
+        dark:placeholder-neutral-400 dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-700
+        dark:bg-zinc-900  dark:border-zinc-700 dark:text-zinc-200 dark:placeholder:text-zinc-500
+        */}
         <button
           onClick={() => {
             setBookName(input.trim());

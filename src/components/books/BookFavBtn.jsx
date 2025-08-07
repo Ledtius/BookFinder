@@ -54,7 +54,7 @@ const BookFavBtn = ({ bookInfo = {} }) => {
         className={`flex items-center justify-center gap-1 p-2  border-2 rounded-lg w-full cursor-pointer transition-all ${
           favState
             ? "bg-yellow-400 border-yellow-400   hover:opacity-50 text-white"
-            : "bg-white border-gray-400   hover:border-yellow-400"
+            : "bg-white border-gray-400   hover:border-yellow-400 "
         }`}
       >
         <svg

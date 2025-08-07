@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useState } from "react";
+import BtnDarkMode from "../common/BtnDarkMode.jsx";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -8,7 +9,7 @@ const Header = () => {
   }
   return (
     <>
-      <header className="flex items-center justify-center pr-5 pl-5 pt-3 pb-3  shadow-lg min-w-8 fixed w-full z-20 bg-white">
+      <header className="flex gap-4 items-center justify-center pr-5 pl-5 pt-3 pb-3  shadow-lg min-w-8 fixed w-full z-20 bg-white dark:bg-neutral-900 dark:text-neutral-100">
         <div className="flex items-center  w-full justify-between max-w-[1024px] relative">
           <figure
             className="flex items-center transition transform ease-in active:scale-105 z-20 cursor-pointer"
@@ -66,8 +67,8 @@ const Header = () => {
                 : "opacity-0 translate-y-0 pointer-events-none lg:opacity-100 lg:translate-y-0 lg:pointer-events-auto"
             }`}
           >
-            <nav className="flex justify-center border-1 border-gray-400 p-5 shadow-lg w-full bg-white lg:border-0 lg:border-none lg:p-0 lg:bg-none lg:shadow-none lg:items-center">
-              <ul className="flex items-center flex-col gap-4 text-lg lg:flex-row lg:w-fit lg:gap-12 lg:text-">
+            <nav className="nav">
+              <ul className="ul">
                 <li className="hover-nav-link">
                   <Link to={"/"} onClick={changeShow}>
                     Inicio
@@ -87,6 +88,7 @@ const Header = () => {
             </nav>
           </div>
         </div>
+        <BtnDarkMode />
       </header>
     </>
   );

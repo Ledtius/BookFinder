@@ -5,7 +5,7 @@ const Footer = () => {
     <>
       <footer className="min-w-80 flex justify-center mt-30 flex-col items-center ">
         <div className="flex flex-col items-center md:flex-row md:gap-4 lg:gap-10">
-          <figure className="flex items-center transition transform ease-in scale-120">
+          <figure className="flex items-center transition transform ease-in scale-120 dark:text-gray-100">
             <Link to="/" className="flex items-center">
               <svg
                 className="size-10 fill-rose-600"
@@ -73,10 +73,10 @@ const Footer = () => {
           </nav>
         </div>
         <hr className="border-1 border-gray-300 w-full" />
-        <small className="text-center p-4 text-neutral-500">
+        <small className="text-center p-4 text-neutral-500 dark:text-gray-100 text-sm">
           © 2025 -{" "}
           <a
-            className="hover-nav-link"
+            className="hover-nav-link text-lg"
             target="_blank"
             href="https://www.linkedin.com/in/caletdevia/"
           >

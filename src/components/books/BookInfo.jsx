@@ -27,29 +27,37 @@ const BookInfo = () => {
         />
         <div className="flex flex-col items-start gap-4 max-w-sm md:max-w-md lg:w-[800px] lg:h-[470.388px] justify-between ">
           <article className="flex flex-col gap-2">
-            <h1 className="font-semibold text-2xl max-h-16 overflow-auto">
+            <h1 className="font-semibold text-2xl max-h-16 overflow-auto dark:text-neutral-100">
               {title}
             </h1>
-            <span className="max-h-16 overflow-auto ">{authors}</span>
+            <span className="max-h-16 overflow-auto text-gray-300 ">
+              {authors}
+            </span>
           </article>
           <article className="flex flex-col gap-2">
-            <h2 className="font-semibold text-lg max-h-16 overflow-auto ">
+            <h2 className="font-semibold text-lg max-h-16 overflow-auto dark:text-neutral-100 ">
               Descripcion
             </h2>
-            <p className="max-h-25 overflow-auto ">{description}</p>
+            <p className="max-h-25 overflow-auto dark:text-gray-300 ">
+              {description}
+            </p>
           </article>
           <div className="flex flex-col items-start gap-4">
             <article>
-              <h2 className="font-semibold text-lg max-h-16 overflow-auto ">
+              <h2 className="font-semibold text-lg max-h-16 overflow-auto dark:text-neutral-100 ">
                 Editorial
               </h2>
-              <span className="max-h-16 overflow-auto ">{publisher}</span>
+              <span className="max-h-16 overflow-auto dark:text-gray-300 ">
+                {publisher}
+              </span>
             </article>
             <article>
-              <h2 className="font-semibold text-lg max-h-16 overflow-auto ">
+              <h2 className="font-semibold text-lg max-h-16 overflow-auto dark:text-neutral-100">
                 Fecha de publicacion
               </h2>
-              <span className="max-h-16 overflow-auto ">{publishedDate}</span>
+              <span className="max-h-16 overflow-auto dark:text-gray-300 ">
+                {publishedDate}
+              </span>
             </article>
           </div>
           <div className="flex flex-col w-full gap-4">

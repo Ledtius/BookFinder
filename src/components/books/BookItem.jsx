@@ -32,10 +32,12 @@ const BookItem = ({ bookInfo = {} }) => {
           alt="book-image"
         />
         <article className="flex flex-col gap-2 min-h-[95.98px]">
-          <h3 className="font-semibold text-2xl  max-h-16 overflow-auto min-h-8 w-[180px]">
+          <h3 className="font-semibold text-2xl  max-h-16 overflow-auto min-h-8 w-[180px dark:text-neutral-100">
             {title}
           </h3>
-          <h4 className="max-h-9 overflow-auto ">{authors}</h4>
+          <h4 className="max-h-9 overflow-auto dark:text-gray-300 ">
+            {authors}
+          </h4>
         </article>
       </Link>
 
