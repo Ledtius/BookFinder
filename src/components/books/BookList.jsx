@@ -2,7 +2,10 @@ import { ContextBooks } from "../../context/ContextBooks.js";
 
 import BookItem from "./BookItem.jsx";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
+import emptySearch from "../../assets/image/emptySearch.png";
+import errorSvg from "../../assets/image/error.svg";
+import noBook from "../../assets/image/noBook.png";
 
 const BookList = () => {
   const {
@@ -22,7 +25,7 @@ const BookList = () => {
             ? "opacity-100"
             : " opacity-0 size-10 pointer-events-none"
         }`}
-        src="/src/assets/image/emptySearch.png"
+        src={emptySearch}
         alt="no-search"
       />
 
@@ -82,13 +85,7 @@ const BookList = () => {
         </ellipse>
       </svg>
 
-      {stateError && (
-        <img
-          className="size-90"
-          src="/src/assets/image/error.svg"
-          alt="error"
-        />
-      )}
+      {stateError && <img className="size-90" src={errorSvg} alt="error" />}
 
       <ul
         className={`book-list-ul transition-all ${
@@ -108,10 +105,8 @@ const BookList = () => {
             imageLinks,
           } = volumeInfo;
 
-          const {
-            thumbnail = "/src/assets/image/noBook.png",
-            smallThumbnail = "/src/assets/image/noBook.png",
-          } = imageLinks || {};
+          const { thumbnail = { noBook }, smallThumbnail = { noBook } } =
+            imageLinks || {};
 
           const bookInfo = {
             id,

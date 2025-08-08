@@ -1,3 +1,4 @@
+import aboutSvg from "../../assets/image/about-us-2.svg";
 const AboutUs = () => {
   return (
     <>
@@ -23,8 +24,8 @@ const AboutUs = () => {
 
           <img
             className="mt-10 rounded-lg min-w-60 w-full max-w-100 h-full md:w-full md:h-105"
-            src="/src/assets/image/about-us-2.svg"
-            alt=""
+            src={aboutSvg}
+            alt="about-us"
           />
           <article className="mt-5 text-justify md:flex-row max-w-100 dark:text-neutral-400">
             <p>

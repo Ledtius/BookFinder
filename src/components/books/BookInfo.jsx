@@ -1,6 +1,7 @@
 import BookFavBtn from "./BookFavBtn.jsx";
 import { ContextBooks } from "../../context/ContextBooks.js";
 import { useContext } from "react";
+import noBook from "../../assets/image/noBook.png";
 
 const BookInfo = () => {
   const { globalBookInfo } = useContext(ContextBooks);
@@ -13,8 +14,8 @@ const BookInfo = () => {
     publisher = "Sin editorial",
     publishedDate = "Sin fecha",
     previewLink = "about:blank",
-    thumbnail = "/src/assets/image/noBook.png",
-    smallThumbnail = "/src/assets/image/noBook.png",
+    thumbnail = { noBook },
+    smallThumbnail = { noBook },
   } = globalBookInfo;
 
   return (

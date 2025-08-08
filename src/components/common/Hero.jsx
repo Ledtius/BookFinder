@@ -13,7 +13,11 @@ const Hero = () => {
           </span>
         </article>
 
-        <img className="size-50 lg:size-80" src={hero} alt="book-and-glasses" />
+        <img
+          className="size-50 lg:size-80"
+          src={hero}
+          alt="book-and-glasses"
+        />
       </figure>
     </>
   );
