@@ -14,7 +14,9 @@ const Favorites = () => {
           </svg>
           <h1 className="font-bold text-2xl md:text-3xl">Favoritos</h1>
         </figure>
-        <BookFavList />
+        <div className="min-h-screen">
+          <BookFavList />
+        </div>
       </section>
     </>
   );
