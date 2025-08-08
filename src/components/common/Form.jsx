@@ -31,7 +31,7 @@ const Form = () => {
           onClick={() => {
             setBookName(input.trim());
           }}
-          className="absolute bg-rose-600 pl-6 pr-6 pt-2 pb-2 rounded-md border-1 text-white right-2 cursor-pointer transition-colors duration-200 ease-in hover:bg-white hover:text-rose-500 hover:border-rose-500"
+          className="absolute bg-rose-600 pl-6 pr-6 pt-2 pb-2 rounded-md border-1 text-white right-2 cursor-pointer transition-colors duration-200 ease-in hover:bg-white hover:text-rose-500 hover:border-rose-500 dark:border-rose-500"
         >
           Buscar
         </button>
