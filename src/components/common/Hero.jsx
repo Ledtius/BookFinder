@@ -1,3 +1,4 @@
+import hero from "../../assets/image/hero.png";
 
 const Hero = () => {
   return (
@@ -12,11 +13,7 @@ const Hero = () => {
           </span>
         </article>
 
-        <img
-          className="size-50 lg:size-80"
-          src="../../assets/image/hero.png"
-          alt="book-and-glasses"
-        />
+        <img className="size-50 lg:size-80" src={hero} alt="book-and-glasses" />
       </figure>
     </>
   );
