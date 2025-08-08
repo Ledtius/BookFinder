@@ -1,3 +1,4 @@
+
 const Hero = () => {
   return (
     <>
@@ -13,7 +14,7 @@ const Hero = () => {
 
         <img
           className="size-50 lg:size-80"
-          src="src/assets/image/hero.png"
+          src="../../assets/image/hero.png"
           alt="book-and-glasses"
         />
       </figure>
