@@ -6,10 +6,11 @@ function useBooks() {
   const [books, setBooks] = useState([]);
   const [globalBookInfo, setGlobalBookInfo] = useState({});
   const [stateRequest, setStateRequest] = useState(false);
+  const [stateError, setStateError] = useState(false);
 
   useEffect(() => {
     if (bookName)
-      googleBooks(bookName, setBooks, stateRequest, setStateRequest);
+      googleBooks(bookName, setBooks, setStateRequest, setStateError);
   }, [bookName]);
 
   useEffect(() => {
@@ -18,6 +19,10 @@ function useBooks() {
   useEffect(() => {
     console.log(books);
   }, [books]);
+
+  useEffect(() => {
+    console.log(stateError);
+  }, [stateError]);
 
   return {
     bookName,
@@ -28,6 +33,8 @@ function useBooks() {
     setGlobalBookInfo,
     stateRequest,
     setStateRequest,
+    stateError,
+    setStateError,
   };
 }
 

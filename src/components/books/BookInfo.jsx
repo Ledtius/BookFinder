@@ -38,13 +38,13 @@ const BookInfo = () => {
             <h2 className="font-semibold text-lg max-h-16 overflow-auto dark:text-neutral-100 ">
               Descripcion
             </h2>
-            <p className="max-h-25 overflow-auto dark:text-gray-300 ">
+            <p className="max-h-12 overflow-auto dark:text-gray-300 ">
               {description}
             </p>
           </article>
           <div className="flex flex-col items-start gap-4">
             <article>
-              <h2 className="font-semibold text-lg max-h-16 overflow-auto dark:text-neutral-100 ">
+              <h2 className="font-semibold text-lg max-h-12 overflow-auto dark:text-neutral-100  ">
                 Editorial
               </h2>
               <span className="max-h-16 overflow-auto dark:text-gray-300 ">
@@ -52,7 +52,7 @@ const BookInfo = () => {
               </span>
             </article>
             <article>
-              <h2 className="font-semibold text-lg max-h-16 overflow-auto dark:text-neutral-100">
+              <h2 className="font-semibold text-lg max-h-12 overflow-auto dark:text-neutral-100">
                 Fecha de publicacion
               </h2>
               <span className="max-h-16 overflow-auto dark:text-gray-300 ">

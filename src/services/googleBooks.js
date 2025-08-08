@@ -1,6 +1,6 @@
 const apiKey = import.meta.env.VITE_API_KEY;
 
-async function googleBooks(book, setBooks, stateRequest, setStateRequest) {
+async function googleBooks(book, setBooks, setStateRequest, setStateError) {
   try {
     const response = await fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`
@@ -24,12 +24,14 @@ async function googleBooks(book, setBooks, stateRequest, setStateRequest) {
       setStateRequest(false);
       throw new Error("undefined value in books");
     }
+    setStateError(false);
 
     setBooks(books);
     setTimeout(() => {
       setStateRequest(() => false);
     }, 1000);
   } catch (e) {
+    setStateError(true);
     console.error(e);
   }
 }

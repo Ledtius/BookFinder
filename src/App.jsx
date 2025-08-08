@@ -24,6 +24,8 @@ function App() {
     setGlobalBookInfo,
     stateRequest,
     setStateRequest,
+    stateError,
+    setStateError,
   } = useBooks();
 
   const { favBooks, setFavBooks, mode, setMode } = useStorage();
@@ -44,6 +46,7 @@ function App() {
           setStateRequest,
           mode,
           setMode,
+          stateError,
         }}
       >
         <BrowserRouter>

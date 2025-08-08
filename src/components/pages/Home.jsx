@@ -8,7 +8,9 @@ const Home = () => {
       <section className="flex items-center flex-col mt-30">
         <Hero />
         <Form />
-        <BookList />
+        <div className="flex flex-col items-center justify-center">
+          <BookList />
+        </div>
       </section>
     </>
   );

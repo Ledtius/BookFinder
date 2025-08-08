@@ -1,25 +1,31 @@
-import { Link } from "react-router";
 import { ContextBooks } from "../../context/contextBooks.js";
 
 import BookItem from "./BookItem.jsx";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const BookList = () => {
-  const { books, stateRequest } = useContext(ContextBooks);
+  const {
+    books,
+    setBooks,
+    stateRequest,
+    stateError,
+    setStateError,
+    setStateRequest,
+  } = useContext(ContextBooks);
 
-  console.log(stateRequest);
   return (
     <>
       <img
         className={`size-9/12 max-w-sm mt-20 transition-all ease-in ${
-          books.length === 0
+          books.length === 0 && !stateError
             ? "opacity-100"
             : " opacity-0 size-10 pointer-events-none"
         }`}
         src="/src/assets/image/emptySearch.png"
         alt="no-search"
       />
+
       <svg
         className={`size-20 transition-all ${
           stateRequest ? "opacity-100" : "opacity-0 absolute"
@@ -75,6 +81,15 @@ const BookList = () => {
           />
         </ellipse>
       </svg>
+
+      {stateError && (
+        <img
+          className="size-90"
+          src="/src/assets/image/error.svg"
+          alt="error"
+        />
+      )}
+
       <ul
         className={`book-list-ul transition-all ${
           stateRequest
