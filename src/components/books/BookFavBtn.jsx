@@ -53,8 +53,8 @@ const BookFavBtn = ({ bookInfo = {} }) => {
         }}
         className={`flex items-center justify-center gap-1 p-2  border-2 rounded-lg w-full cursor-pointer transition-all ${
           favState
-            ? "bg-yellow-400 border-yellow-400   hover:opacity-60 text-neutral-700 dark:bg-yellow-500 "
-            : "bg-white border-gray-400   hover:border-yellow-400 dark:bg-neutral-300 dark:text-neutral-800 dark:hover:border-amber-500 dark:hover:opacity-80 "
+            ? "bg-yellow-400 border-neutral-700   hover:opacity-60 text-neutral-700 dark:border-neutral-300 dark:bg-yellow-500"
+            : "bg-white border-gray-400   hover:border-yellow-400 dark:bg-neutral-300 dark:text-neutral-800 dark:hover:border-amber-500 dark:hover:opacity-80 dark:border-neutral-200 "
         }`}
       >
         <svg
