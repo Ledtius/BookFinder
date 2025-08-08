@@ -64,7 +64,7 @@ const BookInfo = () => {
             <a
               href={previewLink}
               target="_blank"
-              className="flex items-center justify-center gap-1 p-2 bg-white border-2 rounded-lg border-rose-600 text-rose-600 font-bold w-full cursor-pointer transition-all hover:text-white hover:bg-rose-600"
+              className="flex items-center justify-center gap-1 p-2 bg-white border-2 rounded-lg border-rose-600 text-rose-600 font-bold w-full cursor-pointer transition-all hover:text-white hover:bg-rose-600 dark:bg-neutral-300 dark:text-rose-700"
             >
               Ver libro
             </a>
