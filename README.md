@@ -1,12 +1,62 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📖 Book Finder (React.js)
 
-Currently, two official plugins are available:
+![Mockup](/public/mockup.webp)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Aplicación web para buscar libros utilizando la API de **Google Books**.
+Permite agregar libros a una lista de favoritos y cambiar entre **modo oscuro** y **modo claro** de forma dinámica.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Tecnologías y conceptos aplicados
+
+* **React Router** (`BrowserRouter`, `Routes`, `Link`, `Outlet`, `useLocation`)
+* **Context API** (`useContext`)
+* **Referencias** (`useRef`)
+* **Limpieza de eventos** (`useEffect` con `return`)
+* **Custom Hooks** (`useBooks`)
+* **Variables de entorno** (`.env`)
+* **Persistencia local** (`localStorage`)
+* **Consumo de APIs** con `fetch` y `async/await`
+* **Manejo de errores** con `try/catch` y `throw new Error()`
+* **Modularización y delegación de responsabilidades** (`/hooks`, `/pages`, `/services`, `files.js`, etc.)
+* **Ciclo de vida de componentes**: montaje, actualización (re-render) y desmontaje
+* **Tailwind CSS** (modo oscuro, diseño responsive, transiciones, clases personalizadas con `@apply`, etc.)
+
+---
+
+## 🛠️ Instalación y ejecución
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tuUsuario/book-search-mvp.git
+cd book-search-mvp
+```
+
+### 2. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 3. Configurar variables de entorno
+
+Crea un archivo `.env` en la raíz del proyecto y añade tu clave de la API de Google Books:
+
+```bash
+VITE_GOOGLE_BOOKS_API_KEY=tu_clave_aqui
+```
+
+Puedes obtener una clave gratuita desde:
+[https://console.cloud.google.com/](https://console.cloud.google.com/)
+
+### 4. Ejecutar el proyecto
+
+```bash
+npm run dev
+```
+
+El proyecto estará disponible en:
+[http://localhost:5173](http://localhost:5173) *(por defecto con Vite)*
+
