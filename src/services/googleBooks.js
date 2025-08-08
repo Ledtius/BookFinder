@@ -1,4 +1,5 @@
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = "AIzaSyCZwslPLzyXjL4YNV8-vuAYU65NB_HM7XY";
 
 async function googleBooks(book, setBooks, setStateRequest, setStateError) {
   try {
