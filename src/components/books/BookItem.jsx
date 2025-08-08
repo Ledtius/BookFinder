@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import BookFavBtn from "./BookFavBtn.jsx";
-import { ContextBooks } from "../../context/contextBooks.js";
+import { ContextBooks } from "../../context/ContextBooks.js";
 import { useContext } from "react";
 
 const BookItem = ({ bookInfo = {} }) => {

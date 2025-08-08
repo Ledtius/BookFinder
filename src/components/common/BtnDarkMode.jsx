@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, useRef } from "react";
-import { ContextBooks } from "../../context/contextBooks.js";
+import { ContextBooks } from "../../context/ContextBooks.js";
 
 const BtnDarkMode = () => {
   const { mode, setMode } = useContext(ContextBooks);
