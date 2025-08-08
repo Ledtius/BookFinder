@@ -60,3 +60,6 @@ npm run dev
 El proyecto estará disponible en:
 [http://localhost:5173](http://localhost:5173) *(por defecto con Vite)*
 
+
+## 🚲 MVP del proyecto
+https://github.com/Ledtius/mbp-search-library
