@@ -105,7 +105,7 @@ const BookList = () => {
             imageLinks,
           } = volumeInfo;
 
-          const { thumbnail = { noBook }, smallThumbnail = { noBook } } =
+          const { thumbnail = noBook , smallThumbnail = noBook  } =
             imageLinks || {};
 
           const bookInfo = {
